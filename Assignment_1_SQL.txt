@@ -36,7 +36,7 @@ insert into EMP values
 (7934, 'Miller', 'Clerk', 7782, '1982/01/23', 1300, null, 10)
 
 
-1. LiClearkl employees whose name begins with 'A'. 
+1. List employees whose name begins with 'A'. 
 
 select * from EMP where ename like 'A%'
 
