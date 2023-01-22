@@ -1,0 +1,92 @@
+1. Retrieve a list of MANAGERS. 
+
+create or alter proc findJob @jname varchar(20)
+as
+begin
+ select * from EMP where job=@jname
+end
+
+execute findJob @jname='Manager'
+
+2. Find out the names and salaries of all employees earning more than 1000 per month.
+
+create or alter view vWSalByName
+as select empno, ename, sal from EMP where sal>1000
+
+select * from vWSalByName
+
+3. Display the names and salaries of all employees except JAMES. 
+
+create or alter view vWNoJam
+as select ename, sal from EMP where ename <> 'James'
+
+select * from vWNoJam
+
+4. Find out the details of employees whose names begin with ‘S’. 
+
+select * from EMP where ename like 'S%'
+
+5. Find out the names of all employees that have ‘A’ anywhere in their name. 
+
+select * from EMP where ename like '%A%'
+
+6. Find out the names of all employees that have ‘L’ as their third character in 
+their name. 
+
+select * from EMP where ename like '__l%'
+
+7. Compute daily salary of JONES. 
+
+select round((sal*12),2)/365 as 'Daily Salary' from EMP where ename='Jones'
+
+8. Calculate the total monthly salary of all employees. 
+
+select ename, (sal/12) as 'Monthly Salary' from EMP 
+select ename, round(sal/12,2) as 'Monthly Salary' from EMP 
+
+9. Print the average annual salary.
+
+create or alter proc Avsal 
+as
+begin
+ select round(AVG(sal),2) as 'Average Salary' from EMP 
+end
+
+exec Avsal
+
+10. Select the name, job, salary, department number of all employees except SALESMAN from department number 30.
+
+select d.deptno, e.ename, e.job, e.sal, e.deptno from DEPT d join EMP e on d.deptno=e.deptno where e.job <> 'Salesman'OR e.deptno <> 30 
+
+11. List unique departments of the EMP table. 
+
+select DISTINCT(dname) from EMP INNER JOIN DEPT ON EMP.deptno=DEPT.deptno 
+
+12. List the name and salary of employees who earn more than 1500 and are in department 10 or 30. Label the columns Employee and Monthly Salary respectively. 
+
+select ename as 'Employee', sal as 'Salary' from EMP where sal>1500 OR deptno=10 AND deptno=30
+
+13. Display the name, job, and salary of all the employees whose job is MANAGER or ANALYST and their salary is not equal to 1000, 3000, or 5000. 
+
+select ename, job, sal from EMP where job='Manager' OR job='Analyst' AND sal NOT IN (1000, 3000, 5000)
+
+14. Display the name, salary and commission for all employees whose commission amount is greater than their salary increased by 10%. 
+
+select ename, sal, comm from EMP where comm > sal + (sal * 0.1) 
+
+15. Display the name of all employees who have two Ls in their name and are in department 30 or their manager is 7782.
+
+select ename from EMP where ename like '%ll%' AND deptno=30 OR mgr_id=7782 
+
+16. Display the names of employees with experience of over 30 years and under 40 yrs Count the total number of employees.  
+
+17. Retrieve the names of departments in ascending order and their employees in descending order.
+
+select * from DEPT
+select * from EMP
+select d.dname, e.ename from DEPT d join EMP e on d.deptno=e.deptno 
+order by d.dname ASC, e.ename DESC
+
+18. Find out experience of MILLER. .
+
+
