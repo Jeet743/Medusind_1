@@ -1,0 +1,247 @@
+Strings Assignment:
+
+1.	Write a program in C# to accept a word from the user and display the length of it.
+
+using System;
+using System.Collections;
+
+
+namespace Assignment_2
+{
+    internal class Q1
+    {
+        static void Main(string[] args)
+        {
+            string str;
+            Console.WriteLine("Please Enter A String: ");
+            str = Console.ReadLine();
+
+            Console.WriteLine("Your String Is: " + str);
+            Console.WriteLine("Length Of String Is: " + str.Length);
+            Console.Read();
+        }
+    }
+}
+
+2.	Write a program in C# to accept a word from the user and display the reverse of it. 
+
+        public void rev()
+        {
+            Console.Write("Please Enter A Word : ");
+            string oS = Console.ReadLine();
+
+            string rS = "";
+            for (int i = oS.Length - 1; i >= 0; i--)
+            {
+                rS += oS[i];
+            }
+            Console.Write($"Reverse Word Is : {rS} ");
+            Console.ReadLine();
+        }
+
+
+3.	Write a program in C# to accept two words from user and find out if they are same.
+
+        public void same()
+        {
+            string str1, str2;
+
+            Console.WriteLine("Please Enter A String: ");
+            str1 = Console.ReadLine();
+
+            Console.WriteLine("Please Enter A String: ");
+            str2 = Console.ReadLine();
+
+            if (str1 == str2)
+            {
+                Console.WriteLine("Strings Are Equal..!!");
+            }
+            else
+            {
+                Console.WriteLine("String Are Not Equal..!!");
+            }
+            Console.Read();
+        }
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Classes and Constructors:
+
+1. Create a class called Accounts which has data members(fields) like Account no, Customer name, Account type, Transaction type (d/w), amount, balance
+D->Deposit
+W->Withdrawal
+
+-write a function that updates the balance depending upon the transaction type
+
+	-If transaction type is deposit call the credit(int amount) function and update balance
+	-If transaction type is withdraw call debit(int amt)function and update balance
+-Pass the other information like Acount no,name,acc type through constructor
+-call the show data method to display the values.
+
+
+using System;
+
+namespace Assignment_2
+{
+    public class Accounts
+    {
+        public int Account_no;
+        public string Cust_name;
+        public string Account_type;
+        public string Transaction_type;
+        public float amount;
+        public float balance = 2000;
+
+        public Accounts() 
+        {
+            Console.WriteLine("Please Enter Account Number: ");
+            this.Account_no = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Please Enter Customer Name: ");
+            this.Cust_name = Convert.ToString(Console.ReadLine());
+
+            Console.WriteLine("Please Enter Account Type: ");
+            this.Account_type = Convert.ToString(Console.ReadLine());
+
+            Console.WriteLine("Please Enter Transaction Type (D-Deposite / W-Withdrawl): ");
+            this.Transaction_type = Convert.ToString(Console.ReadLine());
+
+            Console.WriteLine("Please Enter Amount: ");
+            this.amount = Convert.ToInt32(Console.ReadLine());
+
+            if (Transaction_type == "d" || Transaction_type == "D")
+            {
+                balance = balance + amount;
+            }
+            else if (Transaction_type == "w" || Transaction_type == "W" && amount < balance)
+            {
+                balance = balance - amount;
+            }
+            else if (Transaction_type == "w" || Transaction_type == "W" && amount > balance)
+            {
+                Console.WriteLine("Insufficient Balance..!!");
+            }
+            else
+            {
+                Console.WriteLine("--------");
+            }
+        }
+
+        public void Show()
+        {
+            Console.WriteLine($"\nAccount Number: {Account_no}\n" +
+                   $"Customer Name: {Cust_name}\nAccount Type: {Account_type}\n" +
+                   $"Transaction Type: {Transaction_type}\nAmount: {amount}\nBalance: {balance}\n");
+        }
+
+        static void Main(String[] args)
+        {
+            Accounts a = new Accounts();
+            a.Show();
+            Console.ReadLine();
+        }
+    }
+}
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Create a class called student which has data members like rollno, name, class, Semester, branch, int [] marks=new int marks [5](marks of 5 subjects )
+
+-Pass the details of student like rollno, name, class, SEM, branch in constructor
+-For marks write a method called GetMarks() and give marks for all 5 subjects
+-Write a method called displayresult, which should calculate the average marks
+-If marks of any one subject is less than 35 print result as failed
+-If marks of all subject is >35 but average is < 50 then also print result as failed
+-If avg > 50 then print result as passed.
+-Write a DisplayData() method to display all values.
+
+using System;
+using System.Security.Claims;
+using System.Xml.Linq;
+
+
+namespace Assignment_2
+{
+    class Student
+    {
+        public int rollno;
+        public string name;
+        public int classN;
+        public string sem;
+        public string branch;
+        public int[] marks = new int[5];
+        
+
+        public Student(int rollno1, string name1, int classN1, string sem1, string branch1)
+        {
+            rollno = rollno1;
+            name = name1;
+            classN = classN1;
+            sem = sem1;
+            branch = branch1;
+        }
+
+        public void GetMarks(int sub1, int sub2, int sub3, int sub4, int sub5)
+        {
+            marks[0] = sub1;
+            marks[1] = sub2;
+            marks[2] = sub3;
+            marks[3] = sub4;
+            marks[4] = sub5;
+        }
+
+        public void DisplayResult()
+        {
+            int sum = 0;
+            for(int i=0;i < 5;i++)
+            {
+                if (marks[i] < 35)
+                {
+                    Console.WriteLine("Failed");
+                    return;
+                }
+                sum = sum + marks[i];
+            }
+
+            int avg = sum / 5;
+            if(avg < 50)
+            {
+                Console.WriteLine("Failed");
+            }
+            else 
+            {
+                Console.WriteLine("Passed");
+            }
+        }
+
+        public void DisplayData()
+        {
+            Console.WriteLine("Roll No: " + rollno);
+            Console.WriteLine("Name: " + name);
+            Console.WriteLine("Class: " + classN);
+            Console.WriteLine("Semester: " + sem);
+            Console.WriteLine("Branch: " + branch);
+            Console.Write("Marks: ");
+            for (int i = 0; i < 5; i++)
+            {
+                Console.Write(marks[i] + " ");
+            }
+            Console.WriteLine();
+        }
+
+        static void Main(string[] args)
+        {
+            Student s = new Student(101, "Jeet", 1, "2", "IMCA");
+            s.GetMarks(89, 78, 67, 45, 77);
+            s.DisplayResult();
+            //Console.WriteLine(s.rollno);
+            //Console.WriteLine(s.name);
+            //Console.WriteLine(s.classN);
+            //Console.WriteLine(s.sem);
+            //Console.WriteLine(s.branch);
+            s.DisplayData();
+            Console.ReadLine();
+        }
+    }
+}
+
