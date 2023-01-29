@@ -32,7 +32,6 @@ namespace Assignment_1
             {
                 Console.WriteLine("{0} and {1} are not equal.\n", no1, no2);
             }
-
             Console.Read();
         }
     }
@@ -54,8 +53,9 @@ namespace Assignment_1
             {
                 Console.WriteLine("{0} is a negative number.", n);
             }
-
             Console.Read();
         }
     }
 }
+
+

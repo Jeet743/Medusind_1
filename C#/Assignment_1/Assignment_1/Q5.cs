@@ -71,7 +71,6 @@ namespace Assignment_1
                 Console.WriteLine(marks[i]);
             }
             Console.ReadLine();
-           
         }
-    }
+    }    
 }
