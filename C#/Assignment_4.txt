@@ -1,0 +1,278 @@
+1. Create an Abstract class Student with  Name, StudentId, Grade as members and also an abstract method Boolean Ispassed(grade) which takes grade as an input and checks whether student passed the course or not. Create 2 Sub classes Undergraduate and Graduate that inherits all members of the student and overrides Ispassed() method For the UnderGrad class, if the grade is above 70.0, then isPassed returns true, otherwise it returns false. For the Grad class, if the grade is above 80.0, then isPassed returns true, otherwise returns false.
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment_4
+{
+    public abstract class Student
+    {
+        public string Name;
+        public int StudentId;
+        public double Grade;
+
+        public abstract bool Ispassed(double grade);
+    }
+
+    class Undergraduate : Student
+    {
+        public override bool Ispassed(double grade)
+        {
+            if(grade > 70.0)
+            {
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
+        }
+    }
+
+    class Graduate : Student
+    {
+        public override bool Ispassed(double grade)
+        {
+            if (grade > 80.0)
+            {
+                return true;
+                
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+
+    class Program1
+    {
+        private static void Main()
+        {
+            Student s;
+
+            s = new Undergraduate();
+            s = new Graduate();
+
+            Console.WriteLine("Please Enter Name: ");
+            s.Name = Console.ReadLine();
+
+            Console.WriteLine("\nPlease Enter StudentId: ");
+            s.StudentId = Convert.ToInt32(Console.Read());
+
+            Console.WriteLine("\nPlease Enter Grade: ");
+            s.Grade = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Status : ",s.Ispassed(s.Grade));
+
+            Console.ReadLine();
+        }
+    }
+}
+
+
+2. Create an console application to book train tickets. Create a Passanger class with (Name, Age) and write a function called TicketBooking(int no_of_tickets) that takes no.of tickets to be booked. If the no of tickets is > 2 per booking, raise an user defined exception, and print "cannot book more than 2 tickets". Else Print  "Ticket Booked Successfully". Add a Test class to call TicketBooking method by accepting all required details.
+
+using System;
+
+namespace BookTrain 
+{
+    internal class Passenger
+    {
+        public string name;
+        public int age;
+
+        public void TicketBooking(int no_of_tickets)
+        {
+            if(no_of_tickets > 2)
+            {
+                throw new Exception("Can Not Book More Than 2 Tickets");
+            }
+            else
+            {
+                Console.WriteLine("Ticked Booked Successfully..!!");
+            }
+        }
+    }
+
+    class Test
+    {
+        static void Main(string[] args) 
+        {
+            Passenger p = new Passenger();
+
+            Console.WriteLine("\nPlease Enter Name: ");
+            p.name = Convert.ToString(Console.ReadLine());
+
+            Console.WriteLine("\nPlease cEnter Passenger Age: ");
+            p.age = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("\nPlease Enter Number of Tickets: ");
+            int no_of_tickets = Convert.ToInt32(Console.ReadLine());
+
+            try
+            {
+                p.TicketBooking(no_of_tickets);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            Console.ReadLine();
+
+
+        }
+    }
+}
+
+3.  Create a class library Project called Concession. Write a method called CalculateConcession(int age)  that takes age as an input and calculates concession for travel as below:
+If age<=5 then “Little Champs- Free Ticket” should be displayed
+If age >60 then calculate 30% concession on the totalfare(Which is a constant Eg:500/-) and Display “ Senior Citizen” + Calculated Fare
+Else “Print Ticket Booked” + Fare.
+
+II. Create a Console application with a Class called Program which has int TotalFare as Constant, Name, Age.  Accept Name, Age from the user and call the CalculateConcession() function
+(Hint : Add required references)
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Consession
+{
+    public class Consession1
+    {
+        const int Totalfare = 500;
+        public void CalculateConcession(int age)
+        {
+            if (age <= 5)
+            {
+                Console.WriteLine("Little Champs- Free Ticket");
+            }
+            else if(age > 60)
+            {
+                Console.WriteLine("Senior Citizen totalfare : Rs=" + (Totalfare - ((Totalfare * 30) / 100)));
+            }
+            else
+            {
+                Console.WriteLine("Price Ticket Booked: Rs=" + Totalfare);
+            }
+        }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Consession;
+
+namespace ConsoleProject
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string Name;
+            int Age;
+            Console.Write("Please Enter Name : ");
+            Name = Console.ReadLine();
+
+            Console.Write("Please Enter Age : ");
+            Age = int.Parse(Console.ReadLine());
+
+            Consession1 c = new Consession1();
+            Console.WriteLine("------------------------");
+            Console.WriteLine("Name : " + Name);
+            Console.WriteLine("Age : " + Age);
+            c.CalculateConcession(Age);
+            Console.ReadLine();
+        }
+    }
+}
+
+4. Create an Interface IStudent with int StudentId and string Name as Properties, void ShowDetails() as its method.
+
+Create 2 classes Dayscholar and Resident that implements the interface Properties and Methods. ShowDetails() should show DaysScholar details and Resident Details accordingly.
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleProject
+{
+    internal interface IStudent
+    {
+        int StudentId { get; set; }
+        string Name { get; set; }
+
+        void ShowDetails();
+    }
+
+    class Dayscholar : IStudent
+    {
+        public int StudentId { get; set; }
+        public string Name { get; set; }
+        public void ShowDetails()
+        {
+            Console.WriteLine("----------------------------");
+            Console.WriteLine("-----Dayscholar Details-----");
+            Console.WriteLine("Student Id : " + StudentId);
+            Console.WriteLine("Student Name : " + Name);
+        }
+    }
+
+    class Resident : IStudent
+    {
+        public int StudentId { get; set; }
+        public string Name { get; set; }
+        public void ShowDetails()
+        {
+            Console.WriteLine("----------------------------");
+            Console.WriteLine("-----Residental Details------");
+            Console.WriteLine("Student Id : " + StudentId);
+            Console.WriteLine("Student Name : " + Name);
+        }
+    }
+
+    class Program1
+    {
+        static void Main(string[] args)
+        {
+            IStudent s;
+            
+            Console.WriteLine("Please Enter Dayscholar Details ");
+            s = new Dayscholar();
+
+            Console.Write("Please Enter Student Id : ");
+            s.StudentId = int.Parse(Console.ReadLine());
+
+            Console.Write("Please Enter Name : ");
+            s.Name = Console.ReadLine();
+
+            s.ShowDetails();
+
+            Console.WriteLine("---------------------------------");
+            
+            Console.WriteLine("Please Enter Resident Details: ");
+            s = new Resident();
+
+            Console.Write("Please Enter Student Id : ");
+            s.StudentId = int.Parse(Console.ReadLine());
+            
+            Console.Write("Please Enter Name : ");
+            s.Name = Console.ReadLine();
+            
+            s.ShowDetails();
+            
+            Console.Read();
+        }
+    }
+}
