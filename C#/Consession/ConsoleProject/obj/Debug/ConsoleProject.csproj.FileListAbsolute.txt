@@ -1,0 +1,11 @@
+D:\Medusind\C#\Consession\ConsoleProject\bin\Debug\ConsoleProject.exe.config
+D:\Medusind\C#\Consession\ConsoleProject\bin\Debug\ConsoleProject.exe
+D:\Medusind\C#\Consession\ConsoleProject\bin\Debug\ConsoleProject.pdb
+D:\Medusind\C#\Consession\ConsoleProject\obj\Debug\ConsoleProject.csproj.AssemblyReference.cache
+D:\Medusind\C#\Consession\ConsoleProject\obj\Debug\ConsoleProject.csproj.SuggestedBindingRedirects.cache
+D:\Medusind\C#\Consession\ConsoleProject\obj\Debug\ConsoleProject.csproj.CoreCompileInputs.cache
+D:\Medusind\C#\Consession\ConsoleProject\obj\Debug\ConsoleProject.exe
+D:\Medusind\C#\Consession\ConsoleProject\obj\Debug\ConsoleProject.pdb
+D:\Medusind\C#\Consession\ConsoleProject\bin\Debug\Consession.dll
+D:\Medusind\C#\Consession\ConsoleProject\bin\Debug\Consession.pdb
+D:\Medusind\C#\Consession\ConsoleProject\obj\Debug\ConsoleProject.csproj.CopyComplete

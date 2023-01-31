@@ -1,0 +1,6 @@
+D:\Medusind\C#\Consession\Consession\bin\Debug\Consession.dll
+D:\Medusind\C#\Consession\Consession\bin\Debug\Consession.pdb
+D:\Medusind\C#\Consession\Consession\obj\Debug\Consession.csproj.AssemblyReference.cache
+D:\Medusind\C#\Consession\Consession\obj\Debug\Consession.csproj.CoreCompileInputs.cache
+D:\Medusind\C#\Consession\Consession\obj\Debug\Consession.dll
+D:\Medusind\C#\Consession\Consession\obj\Debug\Consession.pdb

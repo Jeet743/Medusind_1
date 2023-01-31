@@ -1,0 +1,15 @@
+D:\Medusind\C#\Assignment_4\BookTrain\bin\Debug\net6.0\BookTrain.exe
+D:\Medusind\C#\Assignment_4\BookTrain\bin\Debug\net6.0\BookTrain.deps.json
+D:\Medusind\C#\Assignment_4\BookTrain\bin\Debug\net6.0\BookTrain.runtimeconfig.json
+D:\Medusind\C#\Assignment_4\BookTrain\bin\Debug\net6.0\BookTrain.dll
+D:\Medusind\C#\Assignment_4\BookTrain\bin\Debug\net6.0\BookTrain.pdb
+D:\Medusind\C#\Assignment_4\BookTrain\obj\Debug\net6.0\BookTrain.csproj.AssemblyReference.cache
+D:\Medusind\C#\Assignment_4\BookTrain\obj\Debug\net6.0\BookTrain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Medusind\C#\Assignment_4\BookTrain\obj\Debug\net6.0\BookTrain.AssemblyInfoInputs.cache
+D:\Medusind\C#\Assignment_4\BookTrain\obj\Debug\net6.0\BookTrain.AssemblyInfo.cs
+D:\Medusind\C#\Assignment_4\BookTrain\obj\Debug\net6.0\BookTrain.csproj.CoreCompileInputs.cache
+D:\Medusind\C#\Assignment_4\BookTrain\obj\Debug\net6.0\BookTrain.dll
+D:\Medusind\C#\Assignment_4\BookTrain\obj\Debug\net6.0\refint\BookTrain.dll
+D:\Medusind\C#\Assignment_4\BookTrain\obj\Debug\net6.0\BookTrain.pdb
+D:\Medusind\C#\Assignment_4\BookTrain\obj\Debug\net6.0\BookTrain.genruntimeconfig.cache
+D:\Medusind\C#\Assignment_4\BookTrain\obj\Debug\net6.0\ref\BookTrain.dll
