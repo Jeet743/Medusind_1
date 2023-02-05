@@ -1,0 +1,8 @@
+D:\Medusind\C#\struct_assign\Stationery\bin\Debug\Stationery.exe.config
+D:\Medusind\C#\struct_assign\Stationery\bin\Debug\Stationery.exe
+D:\Medusind\C#\struct_assign\Stationery\bin\Debug\Stationery.pdb
+D:\Medusind\C#\struct_assign\Stationery\obj\Debug\Stationery.csproj.AssemblyReference.cache
+D:\Medusind\C#\struct_assign\Stationery\obj\Debug\Stationery.csproj.SuggestedBindingRedirects.cache
+D:\Medusind\C#\struct_assign\Stationery\obj\Debug\Stationery.csproj.CoreCompileInputs.cache
+D:\Medusind\C#\struct_assign\Stationery\obj\Debug\Stationery.exe
+D:\Medusind\C#\struct_assign\Stationery\obj\Debug\Stationery.pdb

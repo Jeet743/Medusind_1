@@ -1,0 +1,8 @@
+D:\Medusind\C#\struct_assign\LINQ_Assignment\obj\Debug\LINQ_Assignment.csproj.AssemblyReference.cache
+D:\Medusind\C#\struct_assign\LINQ_Assignment\obj\Debug\LINQ_Assignment.csproj.SuggestedBindingRedirects.cache
+D:\Medusind\C#\struct_assign\LINQ_Assignment\obj\Debug\LINQ_Assignment.csproj.CoreCompileInputs.cache
+D:\Medusind\C#\struct_assign\LINQ_Assignment\bin\Debug\LINQ_Assignment.exe.config
+D:\Medusind\C#\struct_assign\LINQ_Assignment\bin\Debug\LINQ_Assignment.exe
+D:\Medusind\C#\struct_assign\LINQ_Assignment\bin\Debug\LINQ_Assignment.pdb
+D:\Medusind\C#\struct_assign\LINQ_Assignment\obj\Debug\LINQ_Assignment.exe
+D:\Medusind\C#\struct_assign\LINQ_Assignment\obj\Debug\LINQ_Assignment.pdb

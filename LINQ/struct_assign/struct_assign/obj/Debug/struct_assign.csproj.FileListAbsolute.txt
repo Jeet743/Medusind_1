@@ -1,0 +1,8 @@
+D:\Medusind\C#\struct_assign\struct_assign\bin\Debug\struct_assign.exe.config
+D:\Medusind\C#\struct_assign\struct_assign\bin\Debug\struct_assign.exe
+D:\Medusind\C#\struct_assign\struct_assign\bin\Debug\struct_assign.pdb
+D:\Medusind\C#\struct_assign\struct_assign\obj\Debug\struct_assign.csproj.AssemblyReference.cache
+D:\Medusind\C#\struct_assign\struct_assign\obj\Debug\struct_assign.csproj.SuggestedBindingRedirects.cache
+D:\Medusind\C#\struct_assign\struct_assign\obj\Debug\struct_assign.csproj.CoreCompileInputs.cache
+D:\Medusind\C#\struct_assign\struct_assign\obj\Debug\struct_assign.exe
+D:\Medusind\C#\struct_assign\struct_assign\obj\Debug\struct_assign.pdb
