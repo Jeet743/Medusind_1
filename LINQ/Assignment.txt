@@ -1,0 +1,460 @@
+1. Create a structure 
+struct Books 
+   private string title;
+   private string author;
+   private string subject;
+   private int book_id;
+Include 2 methods called GetValues() and ShowValues() to accept and display details.
+
+create a Class called TestStructures that invokes the above methods of the structure to accept and display the details of the book
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace struct_assign
+{
+    struct Books
+    {
+        private string title;
+        private string author;
+        private string subject;
+        private int book_id;
+
+        public void getValues(string t1, string au1, string su1, int bid)
+        {
+            
+            title = t1;
+            author = au1;
+            subject = su1;
+            book_id = bid;
+        }
+
+        public void ShowValues()
+        {
+            Console.WriteLine("Title: {0}",title);
+            Console.WriteLine("Author: {0}", author);
+            Console.WriteLine("Subject: {0}", subject);
+            Console.WriteLine("Book Id: {0}", book_id);
+        }
+    };
+
+    internal class stru
+    {
+        static void Main(string[] args)
+        {
+           Books b1 = new Books();
+
+            b1.getValues(".NET", "Banurekha", ".NET Full Course",4545);
+
+            b1.ShowValues();
+
+            Console.Read();
+
+        }
+    }
+}
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Collections
+
+2. Create a Class called Products with Productid, Product Name, Price. Accept 10 Products, sort them based on the price, and display the sorted Products
+
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace struct_assign
+{
+    public class Product
+    {
+
+        public int Productid { get; set; }
+        public string Productname { get; set; }
+        public double Price { get; set; }
+    }
+
+    class Products
+    {
+        static void Main()
+        {
+            List<Product> plist = new List<Product>();
+            Console.WriteLine("Please Enter Product Details: ");
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("Please Enter Product Details For Product " + (i + 1));
+
+                Console.WriteLine("Please Enter Product Id:");
+                int productId = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Please Enter Product Name:");
+                string productName = Console.ReadLine();
+
+                Console.WriteLine("Please Enter Product Price:");
+                double productPrice = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("----------------------------------------------------");
+
+                Product p = new Product
+                {
+                    Productid = productId,
+                    Productname = productName,
+                    Price = productPrice
+
+                };
+
+                plist.Add(p);
+            }
+
+            plist.Sort((x, y) => x.Price.CompareTo(y.Price));
+
+            Console.WriteLine("\nSorted Products based on Price:");
+            foreach (Product p in plist)
+            {
+                Console.WriteLine("Product Id: " + p.Productid + " Product Name: " + p.Productname + " Price: " + p.Price);
+            }
+
+            Console.ReadLine();
+
+        }
+    }
+}
+
+
+
+
+3. Create a simple Stationery application to add items and display added items using Generic List collections
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Stationery
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<string> s = new List<string>();
+
+            while (true)
+            {
+                Console.WriteLine("1..Add Stationery");
+                Console.WriteLine("2..Display Stationery");
+                Console.WriteLine("3..Exit");
+
+                Console.WriteLine("Please Enter Your Choice: ");
+                int choice = Convert.ToInt32(Console.ReadLine());
+
+                switch (choice)
+                {
+                    case 1:
+                        Console.WriteLine("Please Enter Stationery Name: ");
+                        string st = Console.ReadLine();
+                        Console.WriteLine("Please Enter Price: ");
+                        string p = Convert.ToString(Console.ReadLine());
+                        s.Add(st);
+                        s.Add(p);
+                        Console.WriteLine("Added..!!");
+                        break;
+
+                    case 2:
+                        Console.WriteLine("The List Is: ");
+                        foreach (string item in s)
+                        {
+                            Console.WriteLine(item);
+                        }
+                        break;
+
+                    case 3:
+                        Environment.Exit(0);
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid");
+                        break;
+                }
+                
+            }
+        }
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+LINQ  :
+
+1. Create a console application and add class named Employee with following field.
+Employee Class
+EmployeeID (Integer)
+FirstName (String)
+LastName (String)
+Title (String)
+DOB (Date)
+DOJ (Date)
+City (String)
+
+2. Create a Generic List Collection empList and populate it with the following records.
+
+EmployeeID 	FirstName	   LastName 		Title 		DOB 			DOJ 			City
+1001		     Malcolm  	     Daruwalla 	Manager 		16/11/1984 	8/6/2011 		Mumbai
+1002 		Asdin	     Dhalla 		AsstManager 	20/08/1984 	7/7/2012 		Mumbai
+1003 		Madhavi 	     Oza 		     Consultant 	14/11/1987 	12/4/2015 	Pune
+1004 		Saba 		Shaikh		SE 			3/6/1990	 	2/2/2016	 	Pune
+1005 		Nazia 		Shaikh 		SE 			8/3/1991 		2/2/2016	 	Mumbai
+1006 		Amit 		Pathak 		Consultant 	7/11/1989 	8/8/2014 		Chennai
+1007 		Vijay 		Natrajan	 	Consultant 	2/12/1989	 	1/6/2015 		Mumbai
+1008 		Rahul 		Dubey 		Associate	 	11/11/1993 	6/11/2014	 	Chennai
+1009 		Suresh 		Mistry		Associate 	12/8/1992 	3/12/2014 	Chennai
+1010 		Sumit 		Shah 		Manager 		12/4/1991 	2/1/2016 		Pune
+
+3. Now once the collection is created write down and execute the LINQ queries for collection 
+as follows :
+
+a. Display detail of all the employee
+b. Display details of all the employee whose location is not Mumbai
+c. Display details of all the employee whose title is AsstManager
+d. Display details of all the employee whose Last Name start with S
+e. Display a list of all the employee who have joined before 1/1/2015
+f. Display a list of all the employee whose date of birth is after 1/1/1990
+g. Display a list of all the employee whose designation is Consultant and Associate
+h. Display total number of employees
+i. Display total number of employees belonging to “Chennai”
+j. Display highest employee id from the list
+k. Display total number of employee who have joined after 1/1/2015
+l. Display total number of employee whose designation is not “Associate”
+m. Display total number of employee based on City
+n. Display total number of employee based on city and title
+o. Display total number of employee who is youngest in the list
+
+------------------------------------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+
+namespace LINQ_Assignment
+{
+    internal class Employee
+    {
+        public int EmployeeId;
+        public string FirstName;
+        public string LastName;
+        public string Title;
+        public DateTime DOB;
+        public DateTime DOJ;
+        public string city;
+    }
+
+    class emp
+    {
+        static void Main(string[] args)
+        {
+            List<Employee> list = new List<Employee>
+            {
+                new Employee { EmployeeId = 1001, FirstName = "Malcolm", LastName = "Daruwalla", Title = "Manager", DOB = new DateTime(1984, 11, 16), DOJ = new DateTime(2011, 06, 08), city = "Mumbai" },
+                new Employee { EmployeeId = 1002, FirstName = "Asdin", LastName = "Dhalla", Title = "AsstManager", DOB = new DateTime(1984, 08, 20), DOJ = new DateTime(2012, 07, 07), city = "Mumbai" },
+
+                new Employee { EmployeeId = 1003, FirstName = "Madhavi", LastName = "Oza", Title = "Consultant", DOB = new DateTime(1987, 11, 14), DOJ = new DateTime(2015, 04, 12), city = "Pune" },
+                new Employee { EmployeeId = 1004, FirstName = "Saba", LastName = "Shaikh", Title = "SE", DOB = new DateTime(1990, 06, 03), DOJ = new DateTime(2016, 02, 02), city = "Pune" },
+
+                new Employee { EmployeeId = 1005, FirstName = "Nazia", LastName = "Shaikh", Title = "SE", DOB = new DateTime(1991, 03, 08), DOJ = new DateTime(2016, 02, 02), city = "Mumbai" },
+                new Employee { EmployeeId = 1006, FirstName = "Amit", LastName = "Pathak", Title = "Consultant", DOB = new DateTime(1989, 11, 07), DOJ = new DateTime(2014, 08, 08), city = "Chennai" },
+
+                new Employee { EmployeeId = 1007, FirstName = "Vijay", LastName = "Natrajan", Title = "Consultant", DOB = new DateTime(1989, 12, 02), DOJ = new DateTime(2015, 06, 01), city = "Mumbai" },
+                new Employee { EmployeeId = 1008, FirstName = "Rahul", LastName = "Dubay", Title = "Associate", DOB = new DateTime(1993, 11, 11), DOJ = new DateTime(2014, 11, 06), city = "Chennai" },
+
+                new Employee { EmployeeId = 1009, FirstName = "Suresh", LastName = "Mistry", Title = "Associate", DOB = new DateTime(1992, 08, 12), DOJ = new DateTime(2014, 12, 03), city = "Chennai" },
+                new Employee { EmployeeId = 1010, FirstName = "Sumit", LastName = "Shah", Title = "Manager", DOB = new DateTime(1991, 04, 12), DOJ = new DateTime(2016, 01, 02), city = "Pune" },
+
+            };
+
+            // a. Display detail of all the employee
+            Console.WriteLine("-------------------------------QUERY : 01------------------------------------------\n");
+            var r = from I in list
+                    select I;
+
+            foreach (Employee e in r)
+            {
+                Console.WriteLine($"Employee ID: {e.EmployeeId} | FirstName: {e.FirstName} | LastName: {e.LastName} | Title: {e.Title} | DOB: {e.DOB} | DOJ: {e.DOJ} | City: {e.city}");
+                Console.WriteLine("\n--------------\n");
+            }
+
+            // b. Display details of all the employee whose location is not Mumbai
+            Console.WriteLine("\n------------------------------QUERY : 02--------------------------------------\n");
+            var a = from I in list
+                    where I.city != "Mumbai"
+                    select I;
+
+            foreach (Employee e in a)
+            {
+                Console.WriteLine($"Employee ID: {e.EmployeeId} | FirstName: {e.FirstName} | LastName: {e.LastName} | Title: {e.Title} | DOB: {e.DOB} | DOJ: {e.DOJ} | City: {e.city}");
+                Console.WriteLine("\n--------------\n");
+            }
+
+            // c. Display details of all the employee whose title is AsstManager
+            Console.WriteLine("\n------------------------------QUERY : 03--------------------------------------\n");
+            IEnumerable<Employee> l = from I in list
+                                      where I.Title == "AsstManager"
+                                      select I;
+
+            foreach (Employee e in l)
+            {
+                Console.WriteLine($"Employee ID: {e.EmployeeId} | FirstName: {e.FirstName} | LastName: {e.LastName} | Title: {e.Title} | DOB: {e.DOB} | DOJ: {e.DOJ} | City: {e.city}");
+                Console.WriteLine("\n--------------\n");
+            }
+
+            // d. Display details of all the employee whose Last Name start with S
+            Console.WriteLine("\n------------------------------QUERY : 04--------------------------------------\n");
+            IEnumerable<Employee> l1 = from I in list
+                                      where I.LastName.StartsWith("S")
+                                      select I;
+
+            foreach (Employee e in l1)
+            {
+                Console.WriteLine($"Employee ID: {e.EmployeeId} | FirstName: {e.FirstName} | LastName: {e.LastName} | Title: {e.Title} | DOB: {e.DOB} | DOJ: {e.DOJ} | City: {e.city}");
+                Console.WriteLine("\n--------------\n");
+            }
+
+            // e. Display a list of all the employee who have joined before 1/1/2015
+            Console.WriteLine("\n------------------------------QUERY : 05--------------------------------------\n");
+            var r1 = from I in list
+                    where I.DOJ < DateTime.Parse("1/1/2015")
+                    select I;
+
+            foreach (Employee e in r1)
+            {
+                Console.WriteLine($"Employee ID: {e.EmployeeId} | FirstName: {e.FirstName} | LastName: {e.LastName} | Title: {e.Title} | DOB: {e.DOB} | DOJ: {e.DOJ} | City: {e.city}");
+                Console.WriteLine("\n--------------\n");
+            }
+
+            // f.Display a list of all the employee whose date of birth is after 1 / 1 / 1990
+            Console.WriteLine("\n------------------------------QUERY : 06--------------------------------------\n");
+            var r2 = from I in list
+                     where I.DOJ > DateTime.Parse("1/1/1990")
+                     select I;
+
+            foreach (Employee e in r2)
+            {
+                Console.WriteLine($"Employee ID: {e.EmployeeId} | FirstName: {e.FirstName} | LastName: {e.LastName} | Title: {e.Title} | DOB: {e.DOB} | DOJ: {e.DOJ} | City: {e.city}");
+                Console.WriteLine("\n--------------\n");
+            }
+
+            // g. Display a list of all the employee whose designation is Consultant and Associate
+            Console.WriteLine("\n------------------------------QUERY : 07--------------------------------------\n");
+            var r3 = from I in list
+                     where I.Title == "Consultant" || I.Title == "Associate"
+                     select I;
+
+            foreach (Employee e in r3)
+            {
+                Console.WriteLine($"Employee ID: {e.EmployeeId} | FirstName: {e.FirstName} | LastName: {e.LastName} | Title: {e.Title} | DOB: {e.DOB} | DOJ: {e.DOJ} | City: {e.city}");
+                Console.WriteLine("\n--------------\n");
+            }
+
+            // h.Display total number of employees
+            Console.WriteLine("\n------------------------------QUERY : 08--------------------------------------\n");
+            var r4 = from I in list
+                     select I;
+
+            Console.WriteLine($"Total Employee: {r4.Count()}");
+            Console.WriteLine("\n-----------------------------------\n");
+
+            //  i.Display total number of employees belonging to “Chennai”
+            Console.WriteLine("\n------------------------------QUERY : 09--------------------------------------\n");
+            var r5 = from I in list
+                     where I.city == "Chennai"
+                     select I;
+
+            Console.WriteLine($"Total Employee: {r4.Count()}");
+            Console.WriteLine("\n-----------------------------------\n");
+
+            // j. Display highest employee id from the list
+            Console.WriteLine("\n------------------------------QUERY : 10--------------------------------------\n");
+            var r6 = list.Max(e => e.EmployeeId);
+
+            Console.WriteLine(r6);
+
+
+            // k.Display total number of employee who have joined after 1 / 1 / 2015
+            Console.WriteLine("\n------------------------------QUERY : 11--------------------------------------\n");
+            var r7 = from I in list
+                     where I.DOJ > DateTime.Parse("1/1/2015")
+                     select I;
+
+            foreach (Employee e in r7)
+            {
+                Console.WriteLine($"Employee ID: {e.EmployeeId} | FirstName: {e.FirstName} | LastName: {e.LastName} | Title: {e.Title} | DOB: {e.DOB} | DOJ: {e.DOJ} | City: {e.city}");
+                Console.WriteLine("\n--------------\n");
+            }
+
+
+            // l.Display total number of employee whose designation is not “Associate”
+            Console.WriteLine("\n------------------------------QUERY : 12--------------------------------------\n");
+            var r8 = from I in list
+                     where I.Title != "Associate"
+                     select I;
+
+            foreach (Employee e in r8)
+            {
+                Console.WriteLine($"Employee ID: {e.EmployeeId} | FirstName: {e.FirstName} | LastName: {e.LastName} | Title: {e.Title} | DOB: {e.DOB} | DOJ: {e.DOJ} | City: {e.city}");
+                Console.WriteLine("\n--------------\n");
+            }
+
+            // m. Display total number of employee based on City
+            Console.WriteLine("\n------------------------------QUERY : 13--------------------------------------\n");
+            var r9 = from I in list.GroupBy(e => e.city)
+                     select new
+                     {
+                         cityname = I.First().city,
+                         ccount = I.Count()
+                     };
+            
+
+            foreach (var e in r9)
+            {
+                Console.WriteLine($"City Name : {e.cityname} | Total Employee :  {e.ccount}");
+            }
+
+            // n. Display total number of employee based on city and title
+            Console.WriteLine("\n------------------------------QUERY : 14--------------------------------------\n");
+            var r10 = from I in list.GroupBy(e => e.city)
+                     select new
+                     {
+                         cityname = I.First().city,
+                         t = I.First().Title,
+                         ccount = I.Count()
+                     };
+
+            foreach (var e in r10)
+            {
+                Console.WriteLine($"City Name : {e.cityname} | Title : {e.t}| Total Employee :  {e.ccount} ");
+            }
+
+            // o. Display total number of employee who is youngest in the list
+            Console.WriteLine("\n------------------------------QUERY : 15--------------------------------------\n");
+            var r11 = from I in list
+                      where I.DOB > DateTime.Parse("1/1/1992")
+                      select I;
+
+            Console.WriteLine($"Total Youngest :  {r11.Count()}");
+
+            Console.ReadLine();
+        }
+    }
+}
+
