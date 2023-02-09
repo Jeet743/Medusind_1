@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Assignment_1.Models.Customer>
+@{
+    ViewBag.Title = "CustomerResiding";
+}
+
+<h2>CustomerResiding</h2>
+
+
+@foreach(var i in Model)
+            {
+                <ul>
+                    <li>@i.CustomerID</li>
+                    <li>@i.CompanyName</li>
+                    <li>@i.ContactName</li>
+                    <li>@i.City</li>
+                    <li>@i.Country</li>
+                </ul>
+            }
+
