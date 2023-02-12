@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Assignment_CodeFirst.Models.Movies>
+@{
+    ViewBag.Title = "DisplayData";
+}
+
+<h2>DisplayData</h2>
+
+@foreach (var m in Model)
+{
+    @m.Moviename
+}
+
+
+
+
